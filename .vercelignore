@@ -1,0 +1,8 @@
+dist
+electron-main.js
+data
+distribute.bat
+run.bat
+run.ps1
+DISTRIBUTION_GUIDE_LT.md
+SETUP_GUIDE_LT.md

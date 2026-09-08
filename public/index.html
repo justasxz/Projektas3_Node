@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Node Real World Lab</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/visual.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand"><span class="mark">N</span><div><strong>REAL WORLD LAB</strong><small>Node.js demonstracija</small></div></div>
+      <div class="live"><i></i><span id="connection">JUNGIAMASI</span></div>
+    </header>
+
+    <section class="hero">
+      <div><p class="eyebrow">/ server control room</p><h1>Paspausk. Serveris<br><em>sureaguos.</em></h1><p class="intro">Valdymo pultas, kuris kalbasi su tikru Node procesu, failų sistema ir operacine sistema.</p></div>
+      <div class="pulse"><span></span><span></span><span></span><b>LIVE</b></div>
+    </section>
+
+    <section class="grid">
+      <article class="panel visual-panel">
+        <div class="panel-head"><div><span class="kicker">00 / NPM PLUGIN</span><h2>Gyvas Node branduolys</h2></div><span class="chip orange">THREE.JS</span></div>
+        <div id="node-visual" aria-label="Gyva 3D Node.js serverio vizualizacija"></div>
+        <div class="visual-caption"><span><i></i> serveris veikia</span><span id="visual-stat">sinchronizuojama...</span></div>
+      </article>
+      <article class="panel notes-panel">
+        <div class="panel-head"><div><span class="kicker">01 / PERSISTENCE</span><h2>Serverio užrašinė</h2></div><span class="chip">SUPABASE</span></div>
+        <form id="note-form"><input id="note-input" required maxlength="120" placeholder="Įrašyk pranešimą serveriui..." autocomplete="off"><button type="submit">IŠSAUGOTI <span>↗</span></button></form>
+        <div id="notes" class="notes"></div>
+      </article>
+
+      <article class="panel status-panel">
+        <div class="panel-head"><div><span class="kicker">02 / RUNTIME</span><h2>Proceso pulsas</h2></div><button class="refresh" id="refresh" title="Atnaujinti būseną">↻</button></div>
+        <div class="metrics">
+          <div><span>NODE VERSION</span><strong id="node">--</strong></div><div><span>PROCESS ID</span><strong id="pid">--</strong></div><div><span>UPTIME</span><strong id="uptime">--</strong></div><div><span>MEMORY RSS</span><strong id="memory">--</strong></div>
+        </div>
+        <div class="machine"><span>HOST MACHINE</span><strong id="host">--</strong><small id="platform">--</small></div>
+      </article>
+
+      <article class="panel feed-panel">
+        <div class="panel-head"><div><span class="kicker">03 / EVENT STREAM</span><h2>Kas vyksta dabar</h2></div><span class="chip orange">POLLING</span></div>
+        <div id="feed" class="feed" aria-live="polite"></div>
+      </article>
+
+      <article class="panel api-panel">
+        <div class="panel-head"><div><span class="kicker">04 / API PROBE</span><h2>Serverio maršrutai</h2></div></div>
+        <div class="route" data-route="/api/health"><span class="verb get">GET</span><code>/api/health</code><button>RUN</button></div>
+        <div class="route" data-route="/api/status"><span class="verb get">GET</span><code>/api/status</code><button>RUN</button></div>
+        <div class="response"><span>RESPONSE</span><pre id="response">Pasirink maršrutą...</pre></div>
+      </article>
+
+      <article class="panel comments-panel">
+        <div class="panel-head"><div><span class="kicker">06 / COMMENTS</span><h2>Komentarai</h2></div><span class="chip">SUPABASE</span></div>
+        <form id="comment-form"><input id="comment-input" required maxlength="240" placeholder="Parašyk komentarą..." autocomplete="off"><button type="submit">SIŲSTI <span>↗</span></button></form>
+        <div id="comments" class="notes"></div>
+      </article>
+
+      <article class="panel powers-panel">
+        <div class="panel-head"><div><span class="kicker">05 / BEHIND THE BROWSER</span><h2>Node galios patikra</h2></div><span class="chip">SERVER ONLY</span></div>
+        <p class="power-copy">Du veiksmai, kurių negali atlikti paprastas puslapis vienas.</p>
+        <button class="power-action" id="probe">PALEISTI CHILD PROCESS <span>↗</span></button>
+        <div class="power-result"><span>SERVER RESULT</span><pre id="power-result">Laukiama veiksmo...</pre></div>
+      </article>
+    </section>
+    <footer><span>NODE.JS / HTTP / SUPABASE / VERCEL</span><span id="clock">--:--:--</span></footer>
+  </main>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

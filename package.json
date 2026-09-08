@@ -1,0 +1,73 @@
+{
+  "name": "node-real-world-lab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Interaktyvi Node.js galimybiu demonstracija studentams",
+  "main": "electron-main.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "electron": "electron .",
+    "electron-dev": "electron . --dev",
+    "build-exe": "electron-builder --win --publish never",
+    "build-exe-portable": "electron-builder --win portable --publish never"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "pg": "^8.23.0",
+    "three": "^0.185.1"
+  },
+  "pkg": {
+    "scripts": [
+      "server.js"
+    ],
+    "assets": [
+      "public/**/*",
+      "data/**/*"
+    ],
+    "targets": [
+      "node20-win-x64"
+    ]
+  },
+  "devDependencies": {
+    "electron": "^44.1.0",
+    "electron-builder": "^26.15.3",
+    "pkg": "^5.8.1"
+  },
+  "build": {
+    "appId": "com.example.nodeapp",
+    "productName": "Node.js Programa",
+    "files": [
+      "electron-main.js",
+      "server.js",
+      "public/**/*",
+      "data/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": null
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Node.js Programa"
+    }
+  }
+}
